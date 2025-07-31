@@ -1,1 +1,7 @@
-"export default function Home() { return <h1>FocusBot API is running</h1>; }" 
+export default function Home() {
+  return (
+    <div>
+      <h1>🚀 FocusBot API is Running</h1>
+    </div>
+  );
+}
