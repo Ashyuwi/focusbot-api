@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     // 👇 Replace with your actual Google Script Web App URL
-    const gsheetResponse = await fetch("https://script.google.com/macros/s/AKfycbxHvrmAIN3Xy7dNmMPgkfexQyYXTj0bqA6ZHGxqZ38udEPXJMXbSk4wlqRS0ikjHxxV/exec", {
+    const gsheetResponse = await fetch("https://script.google.com/macros/s/AKfycby3N0Wy_Ef2DtM5pyE_MGfvnNtHad8H0rwFM_24dqrMGI0morIGjflm0uP_V7-g1Tzx/exec", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
