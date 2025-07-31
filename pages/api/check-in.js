@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   }
 
   // Save to Google Sheets
-  const gsheetResponse = await fetch(https://script.google.com/macros/s/AKfycbxHvrmAIN3Xy7dNmMPgkfexQyYXTj0bqA6ZHGxqZ38udEPXJMXbSk4wlqRS0ikjHxxV/exec, {
+  const gsheetResponse = await fetch("https://script.google.com/macros/s/AKfycbxHvrmAIN3Xy7dNmMPgkfexQyYXTj0bqA6ZHGxqZ38udEPXJMXbSk4wlqRS0ikjHxxV/exec", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
