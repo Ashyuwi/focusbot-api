@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 👇 Replace this with your ACTUAL Google Script Web App URL
+    // 👇 Replace with your actual Google Script Web App URL
     const gsheetResponse = await fetch("https://script.google.com/macros/s/AKfycbxHvrmAIN3Xy7dNmMPgkfexQyYXTj0bqA6ZHGxqZ38udEPXJMXbSk4wlqRS0ikjHxxV/exec", {
       method: 'POST',
       headers: {
@@ -20,14 +20,21 @@ export default async function handler(req, res) {
     });
 
     if (!gsheetResponse.ok) {
-      console.error("Google Sheets API error:", await gsheetResponse.text());
-      return res.status(500).json({ message: 'Failed to log check-in to Google Sheets' });
+      const errorText = await gsheetResponse.text();
+      console.error("Google Sheets error:", errorText);
+      return res.status(500).json({
+        message: 'Failed to log check-in to Google Sheets',
+        error: errorText,
+      });
     }
 
     return res.status(200).json({ message: 'Check-in logged successfully' });
 
   } catch (error) {
     console.error("Error in /check-in:", error);
-    return res.status(500).json({ message: 'Server error logging check-in' });
+    return res.status(500).json({
+      message: 'Server error logging check-in',
+      error: error.message,
+    });
   }
 }
